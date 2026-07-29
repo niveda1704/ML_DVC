@@ -55,7 +55,8 @@ def main():
     )
     print(f"Training samples: {len(X_train)}, Testing samples: {len(X_test)}")
 
-    # 4. Initialize MLflow experiment
+    # 4. Initialize MLflow experiment tracking URI & experiment
+    mlflow.set_tracking_uri("sqlite:///mlflow.db")
     mlflow.set_experiment("Iris_Random_Forest_Experiment")
 
     with mlflow.start_run():
