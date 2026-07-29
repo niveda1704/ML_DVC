@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Data and Models (tracked by DVC)
+data/iris.csv
+models/*.pkl
+
+# MLflow
+mlruns/
+
+# DVC local files
+.dvc/cache
+.dvc/tmp
+
+# IDE / System
+.vscode/
+.idea/
+.DS_Store

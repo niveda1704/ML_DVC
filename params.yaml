@@ -1,0 +1,11 @@
+# Dataset creation parameters
+create_dataset:
+  random_state: 42
+
+# Model training hyperparameters
+train:
+  n_estimators: 150
+  max_depth: 5
+  random_state: 42
+  test_size: 0.2
+

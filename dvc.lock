@@ -1,0 +1,39 @@
+schema: '2.0'
+stages:
+  create_dataset:
+    cmd: python create_dataset.py
+    deps:
+    - path: create_dataset.py
+      hash: md5
+      md5: 201ea9c1e975e47401644c2a66947213
+      size: 1505
+    params:
+      params.yaml:
+        create_dataset.random_state: 42
+    outs:
+    - path: data/iris.csv
+      hash: md5
+      md5: 10f5f61b137fa708403ea5c480386bfe
+      size: 2908
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/iris.csv
+      hash: md5
+      md5: 10f5f61b137fa708403ea5c480386bfe
+      size: 2908
+    - path: src/train.py
+      hash: md5
+      md5: ee6623ef7828b8b2420bf5d7df6b386d
+      size: 3761
+    params:
+      params.yaml:
+        train.max_depth: 5
+        train.n_estimators: 150
+        train.random_state: 42
+        train.test_size: 0.2
+    outs:
+    - path: models/model.pkl
+      hash: md5
+      md5: cdb839fe7a9f640e5a7539a43dd0c536
+      size: 244209

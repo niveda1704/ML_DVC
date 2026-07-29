@@ -1,0 +1,22 @@
+stages:
+  create_dataset:
+    cmd: python create_dataset.py
+    deps:
+      - create_dataset.py
+    params:
+      - create_dataset.random_state
+    outs:
+      - data/iris.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - data/iris.csv
+      - src/train.py
+    params:
+      - train.n_estimators
+      - train.max_depth
+      - train.random_state
+      - train.test_size
+    outs:
+      - models/model.pkl
