@@ -4,7 +4,7 @@ A complete, production-ready Machine Learning project demonstrating data version
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 ml dvc/
@@ -38,7 +38,7 @@ ml dvc/
 
 ---
 
-## 🛠️ Step-by-Step Setup & Terminal Commands
+##  Step-by-Step Setup & Terminal Commands
 
 ### Step 1: Create Virtual Environment
 
@@ -161,17 +161,3 @@ git branch -M main
 git push -u origin main
 ```
 
-*(Optional) Configure DVC Remote Storage (e.g. AWS S3, Google Cloud Storage, or Local Drive):*
-```bash
-dvc remote add -d myremote /path/to/dvc/remote/storage
-dvc push
-```
-
----
-
-## 🎯 Features & Best Practices Implemented
-
-- **Data Versioning**: Large datasets tracked cleanly outside Git using `.dvc` tracking files.
-- **Pipeline Reproducibility**: `dvc.yaml` defines input dependencies, code triggers, parameters, and generated outputs.
-- **Experiment Tracking**: MLflow logs `n_estimators`, `max_depth`, `accuracy`, `precision`, `recall`, `f1_score`, and model artifacts.
-- **Model Persistence**: Trained scikit-learn model serialized locally as `models/model.pkl` using `joblib`.
